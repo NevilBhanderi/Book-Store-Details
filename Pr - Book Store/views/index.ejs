@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFDEE9;
+        background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+    }
+    .form{
+        border: 1px solid;
+        border-radius: 10px;
+        width: 40%;
+        height:  25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        box-shadow: rgba(93, 93, 129, 0.356) 0px 20px 9000000px 10px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -20px inset;
+    } 
+    
+    .form input{
+        border-radius: 5px;
+        padding: 10px;
+    } 
+    .form button{
+        width: 100%;
+        height: 35px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+
+
+    }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+
+thead th {
+  /* background-color: #4CAF50; */
+  background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+
+
+
+  color: white;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+button.edit {
+  background: blue;
+  width: 100%;
+  color: white;
+}
+
+button.edit a {
+  color: white;
+  text-decoration: none;
+}
+
+button.delete {
+  background-color: #f44336;
+  color: white;
+  
+  width: 100%;
+}
+
+button.delete a {
+  color: white;
+  text-decoration: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 5px 10px;
+  }
+}
+
+    
+</style>
+<body>
+    <div class="form">
+
+
+        <h1>Library Managment System</h1>
+
+    <form action="/addData" method="post">
+        <input type="text" placeholder="Book Name" name="book" id=""> <br><br><br>
+        <input type="text" placeholder="Book Author Name" name="author" id=""><br><br><br>
+        <input type="text" placeholder="Book Price" name="price" id=""><br><br><br>
+        <input type="text" placeholder="Book Publish Date" name="publishdate" id=""><br><br><br>
+        <button type="submit">Add Data</button><br><br><br>
+    </form>
+    </div>
+
+    <table border="1">
+        <thead>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Book Price</th>
+            <th>Book Publish Year </th>
+            <th colspan="2">action</th>
+        </thead>
+        <tbody>
+            <% data.map((e,i)=>{%>
+                <tr>
+                    <td><%=e.book%></td>
+                    <td><%=e.author%></td>
+                    <td><%=e.price%></td>
+                    <td><%=e.publishdate%></td>
+                    <td><button class="edit"><a href="/editData?id=<%=e.id %>">Edit</a></button></td>
+                    <td><button class="delete"><a href="/deleteData?id=<%=e.id %>">Delete</a></button></td>
+               
+                </tr>
+            <%})%>
+        </tbody>
+    </table>
+
+</body>
+</html>

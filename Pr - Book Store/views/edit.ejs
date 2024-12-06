@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+}
+
+.form {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6.59rem;
+    overflow: hidden;
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.form form {
+    border: 1px solid;
+    border-radius: 10px;
+    width: 40%;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: rgba(93, 93, 129, 0.356) 0px 20px 9000000px 10px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -20px inset;
+    background: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.form form input {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form form button {
+    width: 50%;
+    height: 190px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+</style>
+<body>
+   <div class="form">
+    <form action="/updateData" method="post">
+        <h1>Edit Data</h1>
+        <input type="text" value="<%=data.id %>" placeholder="name" name="id" hidden>
+        <input type="text" value="<%=data.book %>" placeholder="name" name="book"><br><br>
+        <input type="text" value="<%=data.author %>" placeholder="subject" name="author" ><br><br>
+        <input type="text" value="<%=data.price %>" placeholder="city" name="price" ><br><br>
+        <input type="text" value="<%=data.publishdate %>" placeholder="city" name="publishdate" ><br><br>
+        <button type="submit">update</button><br><br>
+    </form>
+   </div>
+</body>
+</html>
